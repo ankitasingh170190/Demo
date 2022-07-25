@@ -14,7 +14,7 @@ public interface BooksRESTController {
   @ResponseBody
   ResponseEntity<List<Book>> getListOfBooks();
 
-  @GetMapping(value = "/rs/api/1.0/listofpopularbooks",
+  @GetMapping(value = "/rs/api/1.0/listofmostsearchedbooks",
       produces = {MediaType.APPLICATION_JSON_VALUE})
   @ResponseBody
   ResponseEntity<List<Book>> getListOfMostSearchedBooks();
