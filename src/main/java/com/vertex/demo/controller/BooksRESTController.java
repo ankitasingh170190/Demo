@@ -18,4 +18,10 @@ public interface BooksRESTController {
       produces = {MediaType.APPLICATION_JSON_VALUE})
   @ResponseBody
   ResponseEntity<List<Book>> getListOfMostSearchedBooks();
+
+  @GetMapping(value = "/rs/api/1.0/search",
+      produces = {MediaType.APPLICATION_JSON_VALUE})
+  @ResponseBody
+  ResponseEntity<List<Book>> getBooksWithAuthorOrPublicationDateOrPublisherOrTitle(String author, String publicationDate, String publisher, String title);
+
 }

@@ -28,4 +28,9 @@ public class BookService {
     return entityManager.createQuery("SELECT book FROM Book book ORDER BY book.count DESC",
         Book.class).setMaxResults(limit).getResultList();
   }
+
+  public List<Book> findByAuthorOrPublisherOrPublicationDateOrTitle(String author, String publicationDate, String publisher, String title) {
+    return bookRepository.findByAuthorOrPublisherOrPublicationDateOrTitle('%'+author+'%', publicationDate, '%'+publisher+'%', '%'+title+'%');
+
+  }
 }

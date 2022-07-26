@@ -48,4 +48,20 @@ public class BooksRESTControllerImpl implements BooksRESTController {
     }
     return ResponseEntity.status(HttpStatus.OK).body(result);
   }
+
+  @Override
+  public ResponseEntity<List<Book>> getBooksWithAuthorOrPublicationDateOrPublisherOrTitle(String author, String publicationDate, String publisher, String title) {
+    List<Book> result = Collections.emptyList();
+    try {
+      result =
+          bookService.findByAuthorOrPublisherOrPublicationDateOrTitle(author, publicationDate, publisher, title);
+    } catch (
+        ResponseStatusException ex) {
+      throw ex;
+    } catch (RuntimeException ex) {
+      throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+    return ResponseEntity.status(HttpStatus.OK).body(result);
+  }
+
 }

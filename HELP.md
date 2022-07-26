@@ -32,6 +32,12 @@ VALUES (4, 'ankita3', '2021-11-11', 'Penguin Random House', 'Learn SQL', 40);
 INSERT INTO Book (id, author, publication_date, publisher, title, count)
 VALUES (5, 'ankita4', '2021-11-11', 'Penguin Random House', 'Learn SQL', 50);
 
+INSERT INTO Book (id, author, publication_date, publisher, title, count)
+VALUES (6, 'test1', '2021-11-12', 'Random House', 'Learn Java', 25);
+
 SELECT author, count, publication_date, publisher, title
 FROM Book
 ORDER BY count DESC LIMIT 4;
+
+SELECT * FROM Book
+WHERE author LIKE '%nk%' OR publisher LIKE '%an%';
